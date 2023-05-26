@@ -1,0 +1,457 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+nav {
+    z-index: 3;
+    height: 3rem;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    color: #fff;
+    transition: all .6s ease-in-out;
+}
+
+nav.scrolled {
+    background-color: #2176bc;
+    position: fixed;
+    top: 0;
+    transition: all .6s ease-in-out;
+    height: 5rem;
+    padding: 10px;
+}
+
+.Header {
+    position: relative;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-menu li a:hover {
+    border-bottom: 2px solid #2142bc;
+}
+
+.nav-menu li a:hover::after {
+    color: #2142bc;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-icons i {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.container {
+    margin-top: 7.5em;
+    text-align: left;
+}
+
+.nav-icons i:hover {
+    color: #28bbff;
+}
+
+nav>.logo>img {
+    max-height: 85px;
+    position: absolute;
+    top: 5px;
+}
+
+.Drop {
+    display: flex;
+    gap: 20px;
+}
+
+.carousel {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1900px) {
+    .carousel {
+        height: 900px;
+        /* Adjust the height as per your requirement */
+    }
+}
+
+.carousel-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #2142bc, #012e43);
+    mix-blend-mode: screen;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(33, 66, 188, 0.9);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-buttons {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    font-size: 30px;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+}
+
+.carousel-button.prev {
+    position: absolute;
+    left: 20px;
+}
+
+.carousel-button.next {
+    position: absolute;
+    right: 20px;
+}
+
+.info {
+    margin: 0 0!important;
+    padding-top: 1em;
+    font-size: 22px;
+    line-height: 33px;
+    /* or 150% */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: #00C4FF;
+    height: 341px;
+}
+
+.info>p {
+    width: 85%;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.TextonImg {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.TextonImg h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.TextonImg p {
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 1.2rem;
+    padding-top: 2rem;
+    letter-spacing: 0.1em;
+}
+
+.info-page {
+    margin-top: 4em;
+    display: block;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.7rem;
+    padding: 1rem 6rem;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0.075em;
+    color: #777;
+    background-color: #fff;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.info-page h1 {
+    text-align: center;
+    position: relative;
+    color: #001D7B;
+    font-size: 42px;
+    line-height: 1.22727;
+    font-weight: 950;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    z-index: 2;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+.info-page h1:before {
+    content: "CONSTRUISEZ VOTRE";
+    position: absolute;
+    font-weight: 900;
+    top: -0.8em;
+    left: 0;
+    width: 100%;
+    font-size: 2.05em;
+    color: rgba(224, 224, 224, 0.3);
+    z-index: -1;
+}
+
+.info-page h1:after {
+    content: "AVENIR AVEC NOUS";
+    font-weight: 800;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 2.2em;
+    color: rgba(224, 224, 224, 0.3);
+    z-index: -1;
+}
+
+.info-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+    margin-top: 6rem;
+}
+
+.info-card-page>h2 {
+    font-size: 2rem;
+    line-height: 1.27778;
+    font-weight: 600;
+    letter-spacing: 0.075em;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: #001e82;
+}
+
+.info-card-page>p {
+    padding: 20px;
+    font-size: 1.75rem;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    cursor: auto;
+    padding: 0 2rem 5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0.075em;
+    color: #777;
+    background-color: #fff;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.info-card-page {
+    border-radius: 1rem;
+    border: 0.1rem solid #d3d3d3;
+    flex-basis: 35%;
+    margin: 3rem 0;
+    font-size: 1.5rem;
+    text-align: left;
+    position: relative;
+    max-height: 44rem;
+    overflow-y: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.voir-plus-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #2142bc;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.info-card-page p.expanded {
+    max-height: none;
+}
+
+.voir-plus-button:hover {
+    background-color: #1b358f;
+}
+
+.content {
+    overflow: hidden;
+    height: 120px;
+    /* Adjust the height as needed */
+}
+
+.content.expanded {
+    height: auto;
+}
+
+footer {
+    background-color: #25293a;
+    color: #fff;
+    padding: 2rem 0;
+    font-family: roboto, -apple-system, BlinkMacSystemFont, segoe ui, helvetica neue, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: .075em;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex-basis: 33.33%;
+}
+
+.footer-column h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column ul li i {
+    margin-right: 0.5rem;
+}
+
+.social-media-icons {
+    display: flex;
+}
+
+.social-media-icons li {
+    margin-right: 1rem;
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 10px;
+    }
+    .navbar-logo img {
+        max-height: 30px;
+    }
+}
+
+
+/* ecran mobile  */
+
+@media screen and (max-width: 767px) {
+    nav>ul,
+    li {
+        display: none;
+    }
+    nav>.logo>img {
+        max-height: 40px;
+        position: absolute;
+        top: 20px;
+    }
+    .info-page h1 {
+        font-size: 2rem;
+    }
+    .info-page h1:before {
+        content: "";
+    }
+    .info-page h1::after {
+        content: "";
+    }
+}
